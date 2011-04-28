@@ -16,7 +16,7 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>com.manimal</groupId>
+                <groupId>manimal</groupId>
                 <artifactId>beanstalk-maven-plugin</artifactId>
                 <version>1.0-SNAPSHOT</version>
                 <executions>
@@ -74,9 +74,20 @@
                 <defaultGoal>beanstalk:deployNewVersion</defaultGoal>
                 <plugins>
                     <plugin>
-                        <groupId>com.manimal</groupId>
+                        <groupId>manimal</groupId>
                         <artifactId>beanstalk-maven-plugin</artifactId>
                         <version>1.0-SNAPSHOT</version>
+                        <configuration>
+                            <awsAccessKey>${awsAccessKey}</awsAccessKey>
+                            <aswSecretKey>${aswSecretKey}</aswSecretKey>
+                            <s3Bucket>${s3Bucket}</s3Bucket>
+                            <s3Key>${s3Key}</s3Key>
+                            <war>${war}</war>
+                            <ebAppName>${ebAppName}</ebAppName>
+                            <ebNewVersionLabel>${ebNewVersionLabel}</ebNewVersionLabel>
+                            <ebNewVersionDescription>${ebNewVersionDescription}</ebNewVersionDescription>
+                            <ebEnvironmentName>${ebEnvironmentName}</ebEnvironmentName>
+                        </configuration>
                         <executions>
                             <execution>
                                 <phase>install</phase>
